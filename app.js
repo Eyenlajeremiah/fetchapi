@@ -6,8 +6,8 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 // email and GitHub URL
-const email = 'oluwadahunsieyenla@gmail.com';
-const github_url = 'https://github.com/Eyenlajeremiah';
+const email = process.env.EMAIL;
+const github_url = process.env.GITHUB_URL;
 
 app.use(cors()); // Enable CORS for all origins
 
@@ -37,7 +37,7 @@ app.get('/api', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(Server listening on port ${port});
+  console.log(`Server listening on port ${port}`);
 });
 
 
